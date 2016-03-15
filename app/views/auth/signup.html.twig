@@ -1,0 +1,27 @@
+{% extends "layout/default.html.twig" %}
+
+{% block content %}
+    <h1>SignUp</h1>
+    <div style="width: 60%">
+        <form action="{{ urlFor('signUp.post') }}" method="post">
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" class="form-control" name="username" placeholder="User Name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" name="exampleInputEmail1" placeholder="Phone">
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+{% endblock %}
