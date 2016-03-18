@@ -4,6 +4,7 @@
     <title>My Webpage</title>
     <link href="/web/css/bootstrap.min.css" rel="stylesheet">
     <link href="/web/css/main.css" rel="stylesheet">
+    {% block header %}{% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -21,12 +22,11 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ urlFor('home') }}">Home</a></li>
-                <li><a href="{{ urlFor('contact') }}">Contact</a></li>
-                <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ urlFor('signUp') }}">SignUp</a></li>
+                    <li><a href="{{ urlFor('singIn') }}">Log In</a></li>
+                    <li><a href="{{ urlFor('signUp') }}">Sign Up</a></li>
                 </ul>
             </ul>
         </div>

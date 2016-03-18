@@ -5,9 +5,9 @@ session_start();
 
 require 'vendor/autoload.php';
 
-require 'bootstrap/App.php';
+require 'app/config/App.php';
 
-require 'app/database.php';
+require 'app/config/database.php';
 
 $app = new App();
 

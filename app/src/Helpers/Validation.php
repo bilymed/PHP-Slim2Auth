@@ -2,10 +2,25 @@
 
 namespace App\Helpers;
 
+use App\Models\User;
 use Violin\Violin;
 
 class Validation extends Violin
 {
+    protected $user;
+
+    public function __construct()
+    {
+        $this->addFieldMessages(['email' => ['uniqueEmail' => 'That email is already in use']]);
+    }
+
+
+    public function validate_uniqueEmail($value)
+    {
+        $user = User::where('email', $value);
+        return !(bool)$user->count();
+    }
+
     private static $instance;
 
     public static function getInstance()
@@ -13,9 +28,6 @@ class Validation extends Violin
         if (self::$instance === null) {
             self::$instance = new Validation();
         }
-        //var_dump(self::$instance);
-
-
         return self::$instance;
     }
 

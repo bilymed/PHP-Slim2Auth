@@ -11,7 +11,6 @@ class App
     public function __construct()
     {
         $this->getSlimApp();
-
     }
 
     public function getSlimApp()

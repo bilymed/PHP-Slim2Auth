@@ -1,0 +1,37 @@
+{% extends "layout/default.twig" %}
+
+{% block content %}
+
+    <h1>SignUp</h1>
+
+    <form action="{{ urlFor('signUp.post') }}" method="post" >
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email" value="{% if request.post('email') %}{{request.post('email')}} {% endif %}">
+            {% if errors.first('email') %} {{ errors.first('email') }} {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" placeholder="username" value="{% if request.post('username') %}{{request.post('username')}} {% endif %}">
+            {% if errors.first('username') %} {{ errors.first('username') }} {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            {% if errors.first('password') %} {{ errors.first('password') }} {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>password Confirm</label>
+            <input type="password" class="form-control" name="password_confirm" placeholder="Confirm Password">
+            {% if errors.first('password_confirm') %} {{ errors.first('password_confirm') }} {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+
+{% endblock %}
